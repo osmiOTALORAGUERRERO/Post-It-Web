@@ -5,28 +5,35 @@
   $db = new DB();
 
   if (isset($_SESSION['email'])) {
-    require_once 'session.php';
+    header('location: session.php');
   }
 
+  $answer = '';
 
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-
-    $statement = $db -> connect() -> prepare('SELECT * FROM PostIt.Users
-      WHERE email = :email AND password = :password');
+    $password = $_POST['password'];
+    try {
+      $statement = $db -> connect() -> prepare('SELECT * FROM Users WHERE email = :email');
       $statement -> execute(array(
-        ':email' => $email,
-        ':password' => $password
+        ':email' => $email
       ));
       $result = $statement -> fetch();
 
-      if ($result !== false){
-        $_SESSION['email'] = $result->email;
-        header('location: .php');
+      if ($result != false){
+        if(password_verify($password, $result['password'])){
+          $_SESSION['email'] = $result['email'];
+          header ('location: ../post_it/index.php');
+        }else {
+          $answer .= '<i>incorrect email or password</i>';
+        }
       }else{
-        $error .= '<i>This account no exist</i>';
+        $answer .= '<i>This account with this email no exist</i>';
       }
+
+    } catch (\Exception $e) {
+      echo $e -> getMessage();
+    }
   }
 
 

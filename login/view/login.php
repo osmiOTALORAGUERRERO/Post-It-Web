@@ -13,7 +13,7 @@
       <nav>
         <ul>
           <li><a href="#">Login</a></li>
-          <li><a href="#">Register</a></li>
+          <li><a href="../login/sign_up.php">Register</a></li>
         </ul>
       </nav>
     </header>
@@ -24,6 +24,11 @@
       <input type="email" name="email" value="">
       <label for="password">password</label>
       <input type="password" name="password" value="">
+      <?php if(!empty($answer)): ?>
+        <div class="mensaje">
+          <?php echo $answer; ?>
+        </div>
+      <?php endif; ?>
       <button type="submit" name="button">login</button>
     </form>
   </body>

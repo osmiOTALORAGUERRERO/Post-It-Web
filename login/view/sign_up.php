@@ -11,19 +11,24 @@
       </a>
       <nav>
         <ul>
-          <li><a href="#">Login</a></li>
+          <li><a href="../login/login.php">Login</a></li>
           <li><a href="#">Register</a></li>
         </ul>
       </nav>
     </header>
     <h1>Sign Up</h1>
-    <form class="" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
+    <form class="sign_up" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
       <label for="name">Name</label>
-      <input type="name" name="" value="">
+      <input type="name" name="name" value="">
       <label for="">email</label>
-      <input type="email" name="" value="">
+      <input type="email" name="email" value="">
       <label for="">password</label>
-      <input type="password" name="" value="">
+      <input type="password" name="password" value="">
+      <?php if(!empty($answer)): ?>
+        <div class="mensaje">
+            <?php echo $answer; ?>
+        </div>
+      <?php endif; ?>
       <button type="submit" name="button">sign up</button>
     </form>
   </body>
