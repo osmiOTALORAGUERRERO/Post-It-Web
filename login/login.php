@@ -22,6 +22,8 @@
 
       if ($result != false){
         if(password_verify($password, $result['password'])){
+          $_SESSION['id'] = $result['idUser'];
+          $_SESSION['name'] = $result['name'];
           $_SESSION['email'] = $result['email'];
           header ('location: ../post_it/index.php');
         }else {

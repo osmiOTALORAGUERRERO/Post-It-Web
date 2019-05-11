@@ -30,7 +30,7 @@
           echo $e->getMessage();
         }
         $answer .= '<i>Estas registrado</i>';
-        $_SESSION['email'] = $result['email'];
+        $_SESSION['email'] = $email;
         require_once '../post_it/index.php';
       }else {
         $answer .= '<i>Ya existe un usuario con este correo</i>';
