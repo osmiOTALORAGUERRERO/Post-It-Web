@@ -63,9 +63,6 @@
       }
 
     }
-    public function edit(){
-
-    }
   }
 
 ?>

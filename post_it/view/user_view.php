@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome to your post it</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <script type="text/javascript" src="view/jquery-3.4.1.min.js" charset="utf-8"></script> -->
-    <!-- <script src="view/js/user.js" language="javascript"></script> -->
+    <link rel="stylesheet" href="view/css/style.css">
+    <script type="text/javascript" src="view/jquery-3.4.1.min.js" charset="utf-8"></script>
+    <script src="view/js/delete.js" language="javascript"></script>
   </head>
   <body>
     <header>
@@ -29,6 +29,6 @@
         ?>
       </div>
     </div>
-    <script src="view/js/Notes.js" charset="utf-8"></script>
+    <script src="view/js/save.js" language="javascript" charset="utf-8"></script>
   </body>
 </html>

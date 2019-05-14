@@ -16,7 +16,7 @@
               break;
             }
           }
-          require_once 'view/user_view.php';
+          echo json_encode(array('idNote' => $_POST['id-note'], 'success' => true));
         }elseif ($_POST['function'] == 'save') {
           for ($i=0; $i < count($user -> getNotes()); $i++) {
             if($user -> getNotes()[$i] -> getId() == $_POST['id-note']){
@@ -28,6 +28,7 @@
           }
           require_once 'view/user_view.php';
         }
+        $_POST['function'] = null;
       }else {
         $user = new User($_SESSION['id'], $_SESSION['name'], $_SESSION['email']);
         $_SESSION['user'] = $user;

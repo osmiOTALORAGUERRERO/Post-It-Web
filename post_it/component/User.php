@@ -65,6 +65,11 @@
           ':content' => $note->getContent(),
           ':idUser' => $this->id
         ));
+        $statement = $this->db -> connect() -> prepare('SELECT idNote From Notes
+	         WHERE idUser = (Select idUser From Users WHERE idUser = :idUser) ORDER BY idNote DESC LIMIT 1');
+        $statement -> execute(array(':idUser'=>$this->id));
+        $result = $statement -> fetch();
+        $note -> setId($result['idNote']);
         array_push($this->notes, $note);
       } catch (PDOException $e) {
         echo $e->getMessage();
