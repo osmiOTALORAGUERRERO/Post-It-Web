@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome to your post it</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script type="text/javascript" src="view/jquery-3.4.1.min.js" charset="utf-8"></script> -->
+    <!-- <script src="view/js/user.js" language="javascript"></script> -->
   </head>
   <body>
     <header>
@@ -13,17 +16,19 @@
 
     <div class="board">
       <div class="option">
-        <input type="button" id="new_note" name="newNote" value="newNote">
+        <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
+          <input type="submit" name="function" value="newNote">
+        </form>
       </div>
       <div class="notes">
         <?php
           $notes = $user -> getNotes();
           for ($i=0; $i < count($notes); $i++) {
-            require 'note_view.php';
+            require 'view/note_view.php';
           }
         ?>
       </div>
     </div>
-    <script src="js/user.js" language="javascript" charset="utf-8"></script>
+    <script src="view/js/Notes.js" charset="utf-8"></script>
   </body>
 </html>

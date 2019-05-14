@@ -1,6 +1,6 @@
 <?php
   require_once '../database/database.php';
-  require_once 'Note.php';
+  require_once 'component/Note.php';
   /**
    *
    */
@@ -59,7 +59,7 @@
     {
       try {
         $note = new Note();
-        $statement = $db -> connect() -> prepare('INSERT INTO Notes (idNote, title, content, idUser) VALUES (null, :title, :content, :idUser)');
+        $statement = $this->db -> connect() -> prepare('INSERT INTO Notes (idNote, title, content, idUser) VALUES (null, :title, :content, :idUser)');
         $statement -> execute(array(
           ':title' => $note->getTitle(),
           ':content' => $note->getContent(),
