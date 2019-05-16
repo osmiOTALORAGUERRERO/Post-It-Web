@@ -26,12 +26,19 @@
             ':email' => $email,
             ':password' => $password
           ));
+          $statement = $db -> connect() -> prepare('SELECT idUser FROM Users WHERE email = :email');
+          $statement -> execute(array(
+            ':email' => $email
+          ));
+          $result = $statement -> fetch();
+          $answer .= '<i>Estas registrado</i>';
+          $_SESSION['id'] = $result['idUser'];
+          $_SESSION['name'] = $name;
+          $_SESSION['email'] = $email;
+          header ('location: ../post_it/index.php');
         } catch (\Exception $e) {
           echo $e->getMessage();
         }
-        $answer .= '<i>Estas registrado</i>';
-        $_SESSION['email'] = $email;
-        require_once '../post_it/index.php';
       }else {
         $answer .= '<i>Ya existe un usuario con este correo</i>';
       }
@@ -44,7 +51,6 @@
     $statement = $db -> connect() -> prepare('SELECT count(*) AS userCounts FROM Users WHERE email = :email');
     $statement -> execute(array(':email' => $email));
     $result = $statement -> fetch();
-    echo $result['userCounts'];
     if($result['userCounts'] >= 1){
       $validate = true;
     }else {
