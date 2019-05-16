@@ -8,7 +8,7 @@
       <input type="hidden" name="id-note" value="<?php echo $notes[$i] -> getId(); ?>">
       <input type="submit" name="function" value="delete">
     </form>
-    <button type="button" name="function" class="function-note" onclick="">Color</button>
+    <input type="color" name="color" class="color">
   </div>
   <div class="body">
     <input class="title" type="text" value="<?php echo $notes[$i] -> getTitle(); ?>" placeholder="Title">

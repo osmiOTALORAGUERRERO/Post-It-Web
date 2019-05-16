@@ -29,6 +29,7 @@
         ?>
       </div>
     </div>
+    <script src="view/js/color.js" language="javascript" charset="utf-8"></script>
     <script src="view/js/save.js" language="javascript" charset="utf-8"></script>
   </body>
 </html>
