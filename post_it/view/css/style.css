@@ -1,12 +1,32 @@
 body {
+  background: no-repeat url(http://www.myethermalspray.com/wp-content/uploads/2017/05/malla-triangulos-poligonos-azul-celeste-Fondos-de-Pantalla-HD-professor-falken.com_.png);
+  background-size: cover;
   text-align: center;
   padding: 0;
   margin: 0;
+  line-height: 1.5em;
 }
 header {
-  background-color: rgb(40, 119, 255);
+  background: no-repeat url(https://www.maderaschapar.com/wp-content/uploads/2017/01/madera-pino-maritimo.jpg);
+  background-size: cover;
+  align-self: center;
   margin: 0;
-  padding: 0;
+  padding: 1em;
+}
+header h1{
+  display: inline;
+  padding-left: 30%;
+  padding-right: 30%;
+  font-size: 4em;
+}
+header h3{
+  display: inline;
+  margin: 0;
+}
+header a{
+  margin: 0;
+  text-decoration: none;
+  color: rgb(67, 17, 213);
 }
 .board{
   text-align: justify;
@@ -26,10 +46,12 @@ form{
   background-color: black;
   border-radius: 10px;
   padding: 5px;
+  margin: 0;
 }
 .body{
   padding: 5px;
 }
 .title{
   display: block;
+  width: auto;
 }

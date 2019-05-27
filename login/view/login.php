@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>login</title>
+    <link rel="stylesheet" href="view/login.css">
   </head>
   <body>
 
@@ -18,18 +19,20 @@
       </nav>
     </header>
 
-    <h1>Login</h1>
-    <form class="login" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
-      <label for="email">email</label>
-      <input type="email" name="email" value="">
-      <label for="password">password</label>
-      <input type="password" name="password" value="">
-      <?php if(!empty($answer)): ?>
-        <div class="mensaje">
-          <?php echo $answer; ?>
-        </div>
-      <?php endif; ?>
-      <button type="submit" name="button">login</button>
-    </form>
+    <div class="content">
+      <h1>Login</h1>
+      <form class="login" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
+        <label for="email">email</label>
+        <input type="email" name="email" value="">
+        <label for="password">password</label>
+        <input type="password" name="password" value="">
+        <?php if(!empty($answer)): ?>
+          <div class="mensaje">
+            <?php echo $answer; ?>
+          </div>
+        <?php endif; ?>
+        <button type="submit" name="button">login</button>
+      </form>
+    </div>
   </body>
 </html>

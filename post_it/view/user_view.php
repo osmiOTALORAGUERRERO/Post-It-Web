@@ -9,8 +9,8 @@
   </head>
   <body>
     <header>
-      <h1>Post It</h1>
       <h3>Welcome <?php echo $user -> getName() ?></h3>
+      <h1>Post It</h1>
       <a href="../login/close_session.php">Close Session</a>
     </header>
 
